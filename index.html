@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock with Stopwatch and Alarm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <button onclick="toggleTheme()">🌙</button>
+        </div>
+        <div class="nav-center">
+            <button onclick="showTime()">Time</button>
+            <button onclick="showStopwatch()">Stopwatch</button>
+            <button onclick="showAlarm()">Alarm</button>
+        </div>
+        <div class="nav-right">
+            <span>...</span>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="section" id="time-section">
+            <h1 id="time"></h1>
+            <p id="date"></p>
+        </div>
+
+        <div class="section" id="stopwatch-section" style="display:none;">
+            <h2>Stopwatch</h2>
+            <p id="stopwatch-time">00:00</p>
+            <button id="startStopwatch" onclick="toggleStopwatch()">Start</button>
+            <button id="resetStopwatch" onclick="resetStopwatch()">Reset</button>
+            <button id="lapStopwatch" onclick="recordLap()" style="display:none;">Lap</button>
+            <div id="laps"></div>
+        </div>
+        
+        <div id="alarm-section" style="display: none;">
+            <h3>Set Alarm</h3>
+
+            <label for="alarm-hour">Hour:</label>
+            <select id="alarm-hour">
+            </select>
+        
+            <label for="alarm-minute">Minute:</label>
+            <select id="alarm-minute">
+            </select>
+        
+            <label for="alarm-ampm">AM/PM:</label>
+            <select id="alarm-ampm">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
+        
+            <label for="alarm-day">Day:</label>
+            <select id="alarm-day">
+                <option value="Sunday">Sunday</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+            </select>
+        
+            <button onclick="setAlarm()">Set Alarm</button>
+            <button onclick="clearAlarms()">Clear Alarms</button>
+            <p id="alarm-status" style="color: black;" class="alarm-status"></p>
+        </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
